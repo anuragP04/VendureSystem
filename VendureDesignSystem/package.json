@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "storybook": "ng run vendure-design-system:storybook",
-    "build-storybook": "ng run vendure-design-system:build-storybook"
+    "build-storybook": "ng run vendure-design-system:build-storybook",
+    "link:lib": "ng build vendure-design-system --watch --configuration=production; cd dist/vendure-design-system; npm link; cd ../.."
   },
   "private": true,
   "dependencies": {
