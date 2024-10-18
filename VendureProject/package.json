@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "get:lib": "npm link vendure-design-system"
+    "get:lib": "npm i ../VendureDesignSystem/dist/vendure-design-system"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "@angular/router": "^18.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "vendure-design-system": "file:../VendureDesignSystem/dist/vendure-design-system",
     "zone.js": "~0.14.10"
   },
   "devDependencies": {

@@ -22,7 +22,12 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths":{
+        "vendure-design-system": [
+          "../VendureDesignSystem/dist/vendure-design-system"
+        ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
