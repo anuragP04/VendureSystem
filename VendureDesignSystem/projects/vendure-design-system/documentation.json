@@ -6,89 +6,202 @@
     "interceptors": [],
     "classes": [],
     "directives": [],
-    "components": [],
+    "components": [
+        {
+            "name": "StorybookWrapperComponent",
+            "id": "component-StorybookWrapperComponent-308f461f545fc8f19e97451fddd535bf39039fe330e8f062f29a41d683c9d22ad66610aa3be82b05955942f7be314bfcf510142ee0c8b40337480092a2934294",
+            "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "ThemeService",
+                    "type": "injectable"
+                }
+            ],
+            "selector": "storybook-wrapper",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<ng-content></ng-content>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "setTheme",
+                    "args": [
+                        {
+                            "name": "themeName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "themeName",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "assetsDirs": [],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "themeService",
+                        "type": "ThemeService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 12,
+                "jsdoctags": [
+                    {
+                        "name": "themeService",
+                        "type": "ThemeService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": []
+        }
+    ],
     "modules": [],
     "miscellaneous": {
         "variables": [
             {
-                "name": "Large",
+                "name": "ButtonWithClickEvent",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vendure-design-system/src/stories/button.stories.ts",
+                "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    label: \"Click Me\",\n    onClick: () => {\n      alert(\"Clicked\");\n    },\n  },\n}"
             },
             {
-                "name": "LoggedIn",
+                "name": "customViewports",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vendure-design-system/src/stories/header.stories.ts",
+                "file": "projects/vendure-design-system/.storybook/preview.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
+                "type": "object",
+                "defaultValue": "{\n  large: {\n    name: \"Large Screen\",\n    styles: {\n      width: \"1920px\",\n      height: \"1080px\"\n    }\n  },\n  small: {\n    name: \"Small Screen\",\n    styles: {\n      width: \"800px\",\n      height: \"963px\"\n    }\n  }\n}"
             },
             {
-                "name": "LoggedIn",
+                "name": "decorators",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vendure-design-system/src/stories/page.stories.ts",
+                "file": "projects/vendure-design-system/.storybook/preview.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = canvas.getByRole('button', { name: /Log in/i });\n    await expect(loginButton).toBeInTheDocument();\n    await userEvent.click(loginButton);\n    await expect(loginButton).not.toBeInTheDocument();\n\n    const logoutButton = canvas.getByRole('button', { name: /Log out/i });\n    await expect(logoutButton).toBeInTheDocument();\n  },\n}"
+                "type": "[]",
+                "defaultValue": "[\n  (Story: any, context: { args: { theme: any; }; }) => {\n    return {\n      props: {\n        ngAfterViewInit() {\n          const wrapper = (this as any).wrapper;\n          if (wrapper && context.args.theme) {\n            wrapper.setTheme(context.args.theme);\n          }\n        }\n      }\n    };\n  }\n]"
             },
             {
-                "name": "LoggedOut",
+                "name": "DefaultSize",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vendure-design-system/src/stories/header.stories.ts",
+                "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{}"
+                "defaultValue": "{\n  args: {\n    label: \"Large Button\",\n    size: \"default\",\n  },\n}"
             },
             {
-                "name": "LoggedOut",
+                "name": "Disabled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vendure-design-system/src/stories/page.stories.ts",
+                "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  args: {\n    label: \"Disabled Button\",\n    disabled: true,\n  },\n}"
+            },
+            {
+                "name": "Filled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{}"
+                "defaultValue": "{\n  args: {\n    label: \"Button\",\n    variant: \"filled\",\n  },\n}"
+            },
+            {
+                "name": "IconButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  args: {\n    icon: \"home\",\n    iconButton: true,\n  },\n}"
             },
             {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vendure-design-system/src/stories/button.stories.ts",
+                "file": "projects/vendure-design-system/src/lib/VendureDesign.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<VendureDesignSystemComponent>",
+                "defaultValue": "{\n  title: 'Example/BTSS',\n  component: VendureDesignSystemComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\n  args: { onClick: fn() },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\n  args: { onClick: fn() },\n}"
+                "defaultValue": "{\n  title: \"Components/Button\",\n  component: ButtonComponent,\n  decorators: [\n    moduleMetadata({\n      declarations: [StorybookWrapperComponent],\n      providers: [ThemeService],\n      imports: [],\n    }),\n  ],\n  tags: [\"autodocs\"],\n  argTypes: {\n    onClick: { action: \"clicked\" }, // Common action for button clicks\n    disabled: { control: \"boolean\" }, // Control for disabling the button\n    size: {\n      control: {\n        type: \"select\",\n      },\n      options: [\"small\", \"default\"], // Define size options\n    },\n    variant: {\n      control: {\n        type: \"select\",\n      },\n      options: [\"filled\", \"outlined\", \"text\"], // Define variant options\n    },\n    startIcon: {\n      control: { type: \"text\" }, // Control for the start icon\n    },\n    endIcon: {\n      control: { type: \"text\" }, // Control for the start icon\n    },\n    iconButton: { control: \"boolean\" },\n    icon: { control: { type: \"text\" } },\n  },\n}"
             },
             {
-                "name": "meta",
+                "name": "Outlined",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vendure-design-system/src/stories/header.stories.ts",
+                "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<HeaderComponent>",
-                "defaultValue": "{\n  title: 'Example/Header',\n  component: HeaderComponent,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs\n  tags: ['autodocs'],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n  args: {\n    onLogin: fn(),\n    onLogout: fn(),\n    onCreateAccount: fn(),\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/vendure-design-system/src/stories/page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<PageComponent>",
-                "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: \"Outlined Button\",\n    variant: \"outlined\",\n  },\n}"
             },
             {
                 "name": "preview",
@@ -98,37 +211,67 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+                "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n    layout: \"centered\",\n    viewport: { viewports: customViewports }\n  },\n}"
             },
             {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vendure-design-system/src/stories/button.stories.ts",
+                "file": "projects/vendure-design-system/src/lib/VendureDesign.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
             },
             {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/vendure-design-system/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
-            },
-            {
                 "name": "Small",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vendure-design-system/src/stories/button.stories.ts",
+                "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    label: \"Small Button\",\n    size: \"small\",\n  },\n}"
+            },
+            {
+                "name": "Text",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: \"Text Button\",\n    variant: \"text\",\n  },\n}"
+            },
+            {
+                "name": "themes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/.storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "any",
+                "defaultValue": "{\n  // light: {\n  //   primary: 'red',\n  // },\n  // dark: {\n  //   primary: 'blue',\n  // },\n}"
+            },
+            {
+                "name": "WithEndIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: \"End Icon\",\n    endIcon: \"home\",\n  },\n}"
+            },
+            {
+                "name": "WithStartIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: \"Start Icon\",\n    startIcon: \"home\",\n  },\n}"
             }
         ],
         "functions": [],
@@ -137,30 +280,19 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<VendureDesignSystemComponent>",
+                "file": "projects/vendure-design-system/src/lib/VendureDesign.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/vendure-design-system/src/stories/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<HeaderComponent>",
-                "file": "projects/vendure-design-system/src/stories/header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<PageComponent>",
-                "file": "projects/vendure-design-system/src/stories/page.stories.ts",
+                "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -169,123 +301,139 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "projects/vendure-design-system/src/stories/button.stories.ts": [
+            "projects/vendure-design-system/src/lib/button/button.stories.tsx": [
                 {
-                    "name": "Large",
+                    "name": "ButtonWithClickEvent",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vendure-design-system/src/stories/button.stories.ts",
+                    "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'large',\n    label: 'Button',\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    label: \"Click Me\",\n    onClick: () => {\n      alert(\"Clicked\");\n    },\n  },\n}"
+                },
+                {
+                    "name": "DefaultSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: \"Large Button\",\n    size: \"default\",\n  },\n}"
+                },
+                {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  args: {\n    label: \"Disabled Button\",\n    disabled: true,\n  },\n}"
+                },
+                {
+                    "name": "Filled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: \"Button\",\n    variant: \"filled\",\n  },\n}"
+                },
+                {
+                    "name": "IconButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  args: {\n    icon: \"home\",\n    iconButton: true,\n  },\n}"
                 },
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vendure-design-system/src/stories/button.stories.ts",
+                    "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: 'Example/Button',\n  component: ButtonComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\n  args: { onClick: fn() },\n}"
+                    "defaultValue": "{\n  title: \"Components/Button\",\n  component: ButtonComponent,\n  decorators: [\n    moduleMetadata({\n      declarations: [StorybookWrapperComponent],\n      providers: [ThemeService],\n      imports: [],\n    }),\n  ],\n  tags: [\"autodocs\"],\n  argTypes: {\n    onClick: { action: \"clicked\" }, // Common action for button clicks\n    disabled: { control: \"boolean\" }, // Control for disabling the button\n    size: {\n      control: {\n        type: \"select\",\n      },\n      options: [\"small\", \"default\"], // Define size options\n    },\n    variant: {\n      control: {\n        type: \"select\",\n      },\n      options: [\"filled\", \"outlined\", \"text\"], // Define variant options\n    },\n    startIcon: {\n      control: { type: \"text\" }, // Control for the start icon\n    },\n    endIcon: {\n      control: { type: \"text\" }, // Control for the start icon\n    },\n    iconButton: { control: \"boolean\" },\n    icon: { control: { type: \"text\" } },\n  },\n}"
                 },
                 {
-                    "name": "Primary",
+                    "name": "Outlined",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vendure-design-system/src/stories/button.stories.ts",
+                    "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vendure-design-system/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    label: 'Button',\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    label: \"Outlined Button\",\n    variant: \"outlined\",\n  },\n}"
                 },
                 {
                     "name": "Small",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vendure-design-system/src/stories/button.stories.ts",
+                    "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    size: 'small',\n    label: 'Button',\n  },\n}"
-                }
-            ],
-            "projects/vendure-design-system/src/stories/header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vendure-design-system/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    user: {\n      name: 'Jane Doe',\n    },\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    label: \"Small Button\",\n    size: \"small\",\n  },\n}"
                 },
                 {
-                    "name": "LoggedOut",
+                    "name": "Text",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vendure-design-system/src/stories/header.stories.ts",
+                    "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{}"
+                    "defaultValue": "{\n  args: {\n    label: \"Text Button\",\n    variant: \"text\",\n  },\n}"
                 },
                 {
-                    "name": "meta",
+                    "name": "WithEndIcon",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vendure-design-system/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<HeaderComponent>",
-                    "defaultValue": "{\n  title: 'Example/Header',\n  component: HeaderComponent,\n  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs\n  tags: ['autodocs'],\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n  args: {\n    onLogin: fn(),\n    onLogout: fn(),\n    onCreateAccount: fn(),\n  },\n}"
-                }
-            ],
-            "projects/vendure-design-system/src/stories/page.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vendure-design-system/src/stories/page.stories.ts",
+                    "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    const loginButton = canvas.getByRole('button', { name: /Log in/i });\n    await expect(loginButton).toBeInTheDocument();\n    await userEvent.click(loginButton);\n    await expect(loginButton).not.toBeInTheDocument();\n\n    const logoutButton = canvas.getByRole('button', { name: /Log out/i });\n    await expect(logoutButton).toBeInTheDocument();\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    label: \"End Icon\",\n    endIcon: \"home\",\n  },\n}"
                 },
                 {
-                    "name": "LoggedOut",
+                    "name": "WithStartIcon",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/vendure-design-system/src/stories/page.stories.ts",
+                    "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vendure-design-system/src/stories/page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<PageComponent>",
-                    "defaultValue": "{\n  title: 'Example/Page',\n  component: PageComponent,\n  parameters: {\n    // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n    layout: 'fullscreen',\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    label: \"Start Icon\",\n    startIcon: \"home\",\n  },\n}"
                 }
             ],
             "projects/vendure-design-system/.storybook/preview.ts": [
+                {
+                    "name": "customViewports",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/.storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  large: {\n    name: \"Large Screen\",\n    styles: {\n      width: \"1920px\",\n      height: \"1080px\"\n    }\n  },\n  small: {\n    name: \"Small Screen\",\n    styles: {\n      width: \"800px\",\n      height: \"963px\"\n    }\n  }\n}"
+                },
+                {
+                    "name": "decorators",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/.storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n  (Story: any, context: { args: { theme: any; }; }) => {\n    return {\n      props: {\n        ngAfterViewInit() {\n          const wrapper = (this as any).wrapper;\n          if (wrapper && context.args.theme) {\n            wrapper.setTheme(context.args.theme);\n          }\n        }\n      }\n    };\n  }\n]"
+                },
                 {
                     "name": "preview",
                     "ctype": "miscellaneous",
@@ -294,46 +442,65 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
+                    "defaultValue": "{\n  parameters: {\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n    layout: \"centered\",\n    viewport: { viewports: customViewports }\n  },\n}"
+                },
+                {
+                    "name": "themes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/.storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "defaultValue": "{\n  // light: {\n  //   primary: 'red',\n  // },\n  // dark: {\n  //   primary: 'blue',\n  // },\n}"
+                }
+            ],
+            "projects/vendure-design-system/src/lib/VendureDesign.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/VendureDesign.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<VendureDesignSystemComponent>",
+                    "defaultValue": "{\n  title: 'Example/BTSS',\n  component: VendureDesignSystemComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    backgroundColor: {\n      control: 'color',\n    },\n  },\n  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args\n  args: { onClick: fn() },\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/VendureDesign.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    primary: true,\n    label: 'Button',\n  },\n}"
                 }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "projects/vendure-design-system/src/stories/button.stories.ts": [
+            "projects/vendure-design-system/src/lib/VendureDesign.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<VendureDesignSystemComponent>",
+                    "file": "projects/vendure-design-system/src/lib/VendureDesign.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/vendure-design-system/src/lib/button/button.stories.tsx": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ButtonComponent>",
-                    "file": "projects/vendure-design-system/src/stories/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "projects/vendure-design-system/src/stories/header.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<HeaderComponent>",
-                    "file": "projects/vendure-design-system/src/stories/header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "projects/vendure-design-system/src/stories/page.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<PageComponent>",
-                    "file": "projects/vendure-design-system/src/stories/page.stories.ts",
+                    "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -341,162 +508,5 @@
                 }
             ]
         }
-    },
-    "routes": [],
-    "coverage": {
-        "count": 0,
-        "status": "low",
-        "files": [
-            {
-                "filePath": "projects/vendure-design-system/.storybook/preview.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "preview",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vendure-design-system/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vendure-design-system/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vendure-design-system/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vendure-design-system/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vendure-design-system/src/stories/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vendure-design-system/src/stories/button.stories.ts",
-                "type": "type alias",
-                "linktype": "miscellaneous",
-                "linksubtype": "typealias",
-                "name": "Story",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vendure-design-system/src/stories/header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vendure-design-system/src/stories/header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vendure-design-system/src/stories/header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vendure-design-system/src/stories/header.stories.ts",
-                "type": "type alias",
-                "linktype": "miscellaneous",
-                "linksubtype": "typealias",
-                "name": "Story",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vendure-design-system/src/stories/page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vendure-design-system/src/stories/page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vendure-design-system/src/stories/page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/vendure-design-system/src/stories/page.stories.ts",
-                "type": "type alias",
-                "linktype": "miscellaneous",
-                "linksubtype": "typealias",
-                "name": "Story",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            }
-        ]
     }
 }

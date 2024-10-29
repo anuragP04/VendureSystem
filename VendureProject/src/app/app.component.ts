@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { VendureDesignSystemComponent, ButtonComponent } from 'vendure-design-system';
+import { VendureDesignSystemComponent, ButtonComponent, ThemeService } from 'vendure-design-system';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +11,31 @@ import { VendureDesignSystemComponent, ButtonComponent } from 'vendure-design-sy
 })
 export class AppComponent {
   title = 'VendureProject';
+  isDarkTheme = signal(false);
+
+  constructor(private themeService: ThemeService) {
+
+    const darkTheme = {
+      primary: 'red',
+    };
+
+    const lightTheme = {
+      primary: 'black',
+    };
+    this.themeService.setTheme(this.isDarkTheme() ? darkTheme : lightTheme);
+  }
+
+  toggleTheme() {
+    this.isDarkTheme.update(isDark => !isDark);
+
+    const darkTheme = {
+      primary: 'red',
+    };
+
+    const lightTheme = {
+      primary: 'beige',
+    };
+
+    this.themeService.setTheme(this.isDarkTheme() ? darkTheme : lightTheme);
+  }
 }
