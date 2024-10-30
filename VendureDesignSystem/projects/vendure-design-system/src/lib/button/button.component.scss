@@ -10,8 +10,8 @@
   // variant='filled' btn styles
   &.btn-Filled {
     box-shadow: none;
-    background-color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color, #125ac0);
+    border: 1px solid var(--primary-color, #125ac0);
 
     & .mdc-button__label,
     & .mat-icon {

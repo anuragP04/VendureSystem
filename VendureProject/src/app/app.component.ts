@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { VendureDesignSystemComponent, ButtonComponent, ThemeService } from 'vendure-design-system';
+import { VendureDesignSystemComponent, ButtonComponent, ThemeService, InputFieldComponent } from 'vendure-design-system';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, VendureDesignSystemComponent, ButtonComponent],
+  imports: [RouterOutlet, VendureDesignSystemComponent, ButtonComponent, InputFieldComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

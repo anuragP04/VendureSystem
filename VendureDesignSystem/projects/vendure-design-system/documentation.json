@@ -6,100 +6,7 @@
     "interceptors": [],
     "classes": [],
     "directives": [],
-    "components": [
-        {
-            "name": "StorybookWrapperComponent",
-            "id": "component-StorybookWrapperComponent-308f461f545fc8f19e97451fddd535bf39039fe330e8f062f29a41d683c9d22ad66610aa3be82b05955942f7be314bfcf510142ee0c8b40337480092a2934294",
-            "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [
-                {
-                    "name": "ThemeService",
-                    "type": "injectable"
-                }
-            ],
-            "selector": "storybook-wrapper",
-            "styleUrls": [],
-            "styles": [],
-            "template": "<ng-content></ng-content>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "setTheme",
-                    "args": [
-                        {
-                            "name": "themeName",
-                            "type": "string",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 15,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "themeName",
-                            "type": "string",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "assetsDirs": [],
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "themeService",
-                        "type": "ThemeService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 12,
-                "jsdoctags": [
-                    {
-                        "name": "themeService",
-                        "type": "ThemeService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
-            "extends": []
-        }
-    ],
+    "components": [],
     "modules": [],
     "miscellaneous": {
         "variables": [
@@ -124,16 +31,6 @@
                 "defaultValue": "{\n  large: {\n    name: \"Large Screen\",\n    styles: {\n      width: \"1920px\",\n      height: \"1080px\"\n    }\n  },\n  small: {\n    name: \"Small Screen\",\n    styles: {\n      width: \"800px\",\n      height: \"963px\"\n    }\n  }\n}"
             },
             {
-                "name": "decorators",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/vendure-design-system/.storybook/preview.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "[]",
-                "defaultValue": "[\n  (Story: any, context: { args: { theme: any; }; }) => {\n    return {\n      props: {\n        ngAfterViewInit() {\n          const wrapper = (this as any).wrapper;\n          if (wrapper && context.args.theme) {\n            wrapper.setTheme(context.args.theme);\n          }\n        }\n      }\n    };\n  }\n]"
-            },
-            {
                 "name": "DefaultSize",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -142,6 +39,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: \"Large Button\",\n    size: \"default\",\n  },\n}"
+            },
+            {
+                "name": "DefaultValue",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    defaultValue: \"Input Field\",\n  },\n}"
             },
             {
                 "name": "Disabled",
@@ -187,11 +94,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<InputFieldComponent>",
+                "defaultValue": "{\n  title: \"Components/InputField\",\n  component: InputFieldComponent,\n  tags: [\"autodocs\"],\n  argTypes: {\n    disabled: { control: \"boolean\" }, // Control for disabling the button\n    defaultValue: {\n      control: {\n        type: \"text\",\n      },\n    },\n    value: {\n      control: {\n        type: \"text\",\n      },\n    },\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
-                "defaultValue": "{\n  title: \"Components/Button\",\n  component: ButtonComponent,\n  decorators: [\n    moduleMetadata({\n      declarations: [StorybookWrapperComponent],\n      providers: [ThemeService],\n      imports: [],\n    }),\n  ],\n  tags: [\"autodocs\"],\n  argTypes: {\n    onClick: { action: \"clicked\" }, // Common action for button clicks\n    disabled: { control: \"boolean\" }, // Control for disabling the button\n    size: {\n      control: {\n        type: \"select\",\n      },\n      options: [\"small\", \"default\"], // Define size options\n    },\n    variant: {\n      control: {\n        type: \"select\",\n      },\n      options: [\"filled\", \"outlined\", \"text\"], // Define variant options\n    },\n    startIcon: {\n      control: { type: \"text\" }, // Control for the start icon\n    },\n    endIcon: {\n      control: { type: \"text\" }, // Control for the start icon\n    },\n    iconButton: { control: \"boolean\" },\n    icon: { control: { type: \"text\" } },\n  },\n}"
+                "defaultValue": "{\n  title: \"Components/Button\",\n  component: ButtonComponent,\n  tags: [\"autodocs\"],\n  argTypes: {\n    onClick: { action: \"clicked\" }, // Common action for button clicks\n    disabled: { control: \"boolean\" }, // Control for disabling the button\n    size: {\n      control: {\n        type: \"select\",\n      },\n      options: [\"small\", \"default\"], // Define size options\n    },\n    variant: {\n      control: {\n        type: \"select\",\n      },\n      options: [\"filled\", \"outlined\", \"text\"], // Define variant options\n    },\n    startIcon: {\n      control: { type: \"text\" }, // Control for the start icon\n    },\n    endIcon: {\n      control: { type: \"text\" }, // Control for the start icon\n    },\n    iconButton: { control: \"boolean\" },\n    icon: { control: { type: \"text\" } },\n  },\n}"
             },
             {
                 "name": "Outlined",
@@ -251,7 +168,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "any",
-                "defaultValue": "{\n  // light: {\n  //   primary: 'red',\n  // },\n  // dark: {\n  //   primary: 'blue',\n  // },\n}"
+                "defaultValue": "{\n  light: {\n    primary: 'red',\n  },\n  dark: {\n    primary: 'yellow',\n  },\n}"
             },
             {
                 "name": "WithEndIcon",
@@ -282,6 +199,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<VendureDesignSystemComponent>",
                 "file": "projects/vendure-design-system/src/lib/VendureDesign.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<InputFieldComponent>",
+                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -360,7 +288,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<ButtonComponent>",
-                    "defaultValue": "{\n  title: \"Components/Button\",\n  component: ButtonComponent,\n  decorators: [\n    moduleMetadata({\n      declarations: [StorybookWrapperComponent],\n      providers: [ThemeService],\n      imports: [],\n    }),\n  ],\n  tags: [\"autodocs\"],\n  argTypes: {\n    onClick: { action: \"clicked\" }, // Common action for button clicks\n    disabled: { control: \"boolean\" }, // Control for disabling the button\n    size: {\n      control: {\n        type: \"select\",\n      },\n      options: [\"small\", \"default\"], // Define size options\n    },\n    variant: {\n      control: {\n        type: \"select\",\n      },\n      options: [\"filled\", \"outlined\", \"text\"], // Define variant options\n    },\n    startIcon: {\n      control: { type: \"text\" }, // Control for the start icon\n    },\n    endIcon: {\n      control: { type: \"text\" }, // Control for the start icon\n    },\n    iconButton: { control: \"boolean\" },\n    icon: { control: { type: \"text\" } },\n  },\n}"
+                    "defaultValue": "{\n  title: \"Components/Button\",\n  component: ButtonComponent,\n  tags: [\"autodocs\"],\n  argTypes: {\n    onClick: { action: \"clicked\" }, // Common action for button clicks\n    disabled: { control: \"boolean\" }, // Control for disabling the button\n    size: {\n      control: {\n        type: \"select\",\n      },\n      options: [\"small\", \"default\"], // Define size options\n    },\n    variant: {\n      control: {\n        type: \"select\",\n      },\n      options: [\"filled\", \"outlined\", \"text\"], // Define variant options\n    },\n    startIcon: {\n      control: { type: \"text\" }, // Control for the start icon\n    },\n    endIcon: {\n      control: { type: \"text\" }, // Control for the start icon\n    },\n    iconButton: { control: \"boolean\" },\n    icon: { control: { type: \"text\" } },\n  },\n}"
                 },
                 {
                     "name": "Outlined",
@@ -425,16 +353,6 @@
                     "defaultValue": "{\n  large: {\n    name: \"Large Screen\",\n    styles: {\n      width: \"1920px\",\n      height: \"1080px\"\n    }\n  },\n  small: {\n    name: \"Small Screen\",\n    styles: {\n      width: \"800px\",\n      height: \"963px\"\n    }\n  }\n}"
                 },
                 {
-                    "name": "decorators",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/vendure-design-system/.storybook/preview.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n  (Story: any, context: { args: { theme: any; }; }) => {\n    return {\n      props: {\n        ngAfterViewInit() {\n          const wrapper = (this as any).wrapper;\n          if (wrapper && context.args.theme) {\n            wrapper.setTheme(context.args.theme);\n          }\n        }\n      }\n    };\n  }\n]"
-                },
-                {
                     "name": "preview",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -452,7 +370,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any",
-                    "defaultValue": "{\n  // light: {\n  //   primary: 'red',\n  // },\n  // dark: {\n  //   primary: 'blue',\n  // },\n}"
+                    "defaultValue": "{\n  light: {\n    primary: 'red',\n  },\n  dark: {\n    primary: 'yellow',\n  },\n}"
+                }
+            ],
+            "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx": [
+                {
+                    "name": "DefaultValue",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    defaultValue: \"Input Field\",\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<InputFieldComponent>",
+                    "defaultValue": "{\n  title: \"Components/InputField\",\n  component: InputFieldComponent,\n  tags: [\"autodocs\"],\n  argTypes: {\n    disabled: { control: \"boolean\" }, // Control for disabling the button\n    defaultValue: {\n      control: {\n        type: \"text\",\n      },\n    },\n    value: {\n      control: {\n        type: \"text\",\n      },\n    },\n  },\n}"
                 }
             ],
             "projects/vendure-design-system/src/lib/VendureDesign.stories.ts": [
@@ -488,6 +428,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<VendureDesignSystemComponent>",
                     "file": "projects/vendure-design-system/src/lib/VendureDesign.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InputFieldComponent>",
+                    "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

@@ -19,11 +19,11 @@ export class ButtonComponent {
   @Input() type?: 'button' | 'submit' | 'reset' = 'button';
   @Input() variant?: 'filled' | 'outlined' | 'text' = 'filled';
   @Input() size?: 'small' | 'default' = 'default';
-  @Input() disabled?: boolean;
+  @Input() disabled?: boolean = false;
   @Input() className?: string = '';
-  @Input() startIcon?: string | undefined;
-  @Input() endIcon?: string | undefined;
-  @Input() icon?: string | undefined;
+  @Input() startIcon?: string = '';
+  @Input() endIcon?: string = '';
+  @Input() icon?: string = '';
   @Input() iconButton?: boolean = false;
 
   // Output event when the button is clicked
@@ -43,7 +43,7 @@ export class ButtonComponent {
       capitalize(this.variant),
       `Size${capitalize(this.size)}`,
       `Type${capitalize(this.type)}`,
-      this.disabled,
+      this.disabled && 'disabled',
       this.startIcon && 'startIcon',
       this.endIcon && 'endIcon',
       this.iconButton && 'iconButton'];
