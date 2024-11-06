@@ -91,14 +91,6 @@
     }
   }
 
-  // input-field disabled styles
-  &.input-field-disabled {
-    & .mat-mdc-text-field-wrapper {
-      background-color: #f8f8f7;
-      border: 1px solid #dbd8d4;
-    }
-  }
-
   // input-field with hint styles
   &.input-field-hint {
     & .mat-mdc-text-field-wrapper {
@@ -124,10 +116,20 @@
       }
     }
   }
+
   // input-field with error and focused styles
   &.input-field-error.input-field-focused {
     & .mat-mdc-text-field-wrapper {
       box-shadow: 0px 0px 0px 4px #f8e8e7;
+    }
+  }
+
+  // input-field disabled styles
+  &.input-field-disabled {
+    & .mat-mdc-text-field-wrapper {
+      background-color: #f8f8f7;
+      border: 1px solid #dbd8d4;
+      box-shadow: none !important;
     }
   }
 
