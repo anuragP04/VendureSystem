@@ -61,6 +61,16 @@
                 "defaultValue": "{\n  args: {\n    label: \"Disabled Button\",\n    disabled: true,\n  },\n}"
             },
             {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    disabled: true,\n  },\n}"
+            },
+            {
                 "name": "Filled",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -69,6 +79,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: \"Button\",\n    variant: \"filled\",\n  },\n}"
+            },
+            {
+                "name": "Focused",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    focused: true,\n  },\n}"
             },
             {
                 "name": "IconButton",
@@ -94,21 +114,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<InputFieldComponent>",
-                "defaultValue": "{\n  title: \"Components/InputField\",\n  component: InputFieldComponent,\n  tags: [\"autodocs\"],\n  argTypes: {\n    disabled: { control: \"boolean\" }, // Control for disabling the button\n    defaultValue: {\n      control: {\n        type: \"text\",\n      },\n    },\n    value: {\n      control: {\n        type: \"text\",\n      },\n    },\n  },\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<ButtonComponent>",
                 "defaultValue": "{\n  title: \"Components/Button\",\n  component: ButtonComponent,\n  tags: [\"autodocs\"],\n  argTypes: {\n    onClick: { action: \"clicked\" }, // Common action for button clicks\n    disabled: { control: \"boolean\" }, // Control for disabling the button\n    size: {\n      control: {\n        type: \"select\",\n      },\n      options: [\"small\", \"default\"], // Define size options\n    },\n    variant: {\n      control: {\n        type: \"select\",\n      },\n      options: [\"filled\", \"outlined\", \"text\"], // Define variant options\n    },\n    startIcon: {\n      control: { type: \"text\" }, // Control for the start icon\n    },\n    endIcon: {\n      control: { type: \"text\" }, // Control for the start icon\n    },\n    iconButton: { control: \"boolean\" },\n    icon: { control: { type: \"text\" } },\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<InputFieldComponent>",
+                "defaultValue": "{\n  title: \"Components/InputField\",\n  component: InputFieldComponent,\n  tags: [\"autodocs\"],\n  argTypes: {\n    label: {\n      control: {\n        type: \"text\",\n      },\n    },\n    defaultValue: {\n      control: {\n        type: \"text\",\n      },\n    },\n    value: {\n      control: {\n        type: \"text\",\n      },\n    },\n    placeholder: {\n      control: {\n        type: \"text\",\n      },\n    },\n    disabled: { control: \"boolean\" }, // Control for disabling the input\n    clear: { control: \"boolean\" }, // Control for clear icon in input\n    focused: { control: \"boolean\" }, // Control for focused state\n    error: { control: \"boolean\" }, // Control for error state\n    hint: {\n      control: {\n        type: \"text\",\n      },\n    },\n    startAdornment: {\n      control: {\n        type: \"text\",\n      },\n    },\n    endAdornment: {\n      control: {\n        type: \"text\",\n      },\n    },\n  },\n}"
             },
             {
                 "name": "Outlined",
@@ -119,6 +139,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: \"Outlined Button\",\n    variant: \"outlined\",\n  },\n}"
+            },
+            {
+                "name": "Placeholder",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    placeholder: \"olivia@verdure.com\",\n  },\n}"
             },
             {
                 "name": "preview",
@@ -181,6 +211,56 @@
                 "defaultValue": "{\n  args: {\n    label: \"End Icon\",\n    endIcon: \"home\",\n  },\n}"
             },
             {
+                "name": "WithError",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    error: true,\n    hint: \"This is a hint text to help user.\",\n  },\n}"
+            },
+            {
+                "name": "WithErrorAndFocused",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    error: true,\n    focused: true,\n  },\n}"
+            },
+            {
+                "name": "WithHint",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    hint: \"This is a hint text to help user.\",\n  },\n}"
+            },
+            {
+                "name": "WithIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    startAdornment: \"home\",\n  },\n}"
+            },
+            {
+                "name": "WithLabel",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: \"Email\",\n  },\n}"
+            },
+            {
                 "name": "WithStartIcon",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -208,8 +288,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<InputFieldComponent>",
-                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                "rawtype": "StoryObj<ButtonComponent>",
+                "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -219,8 +299,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ButtonComponent>",
-                "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
+                "rawtype": "StoryObj<InputFieldComponent>",
+                "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -385,6 +465,26 @@
                     "defaultValue": "{\n  args: {\n    defaultValue: \"Input Field\",\n  },\n}"
                 },
                 {
+                    "name": "Disabled",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    disabled: true,\n  },\n}"
+                },
+                {
+                    "name": "Focused",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    focused: true,\n  },\n}"
+                },
+                {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
@@ -392,7 +492,67 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<InputFieldComponent>",
-                    "defaultValue": "{\n  title: \"Components/InputField\",\n  component: InputFieldComponent,\n  tags: [\"autodocs\"],\n  argTypes: {\n    disabled: { control: \"boolean\" }, // Control for disabling the button\n    defaultValue: {\n      control: {\n        type: \"text\",\n      },\n    },\n    value: {\n      control: {\n        type: \"text\",\n      },\n    },\n  },\n}"
+                    "defaultValue": "{\n  title: \"Components/InputField\",\n  component: InputFieldComponent,\n  tags: [\"autodocs\"],\n  argTypes: {\n    label: {\n      control: {\n        type: \"text\",\n      },\n    },\n    defaultValue: {\n      control: {\n        type: \"text\",\n      },\n    },\n    value: {\n      control: {\n        type: \"text\",\n      },\n    },\n    placeholder: {\n      control: {\n        type: \"text\",\n      },\n    },\n    disabled: { control: \"boolean\" }, // Control for disabling the input\n    clear: { control: \"boolean\" }, // Control for clear icon in input\n    focused: { control: \"boolean\" }, // Control for focused state\n    error: { control: \"boolean\" }, // Control for error state\n    hint: {\n      control: {\n        type: \"text\",\n      },\n    },\n    startAdornment: {\n      control: {\n        type: \"text\",\n      },\n    },\n    endAdornment: {\n      control: {\n        type: \"text\",\n      },\n    },\n  },\n}"
+                },
+                {
+                    "name": "Placeholder",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    placeholder: \"olivia@verdure.com\",\n  },\n}"
+                },
+                {
+                    "name": "WithError",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    error: true,\n    hint: \"This is a hint text to help user.\",\n  },\n}"
+                },
+                {
+                    "name": "WithErrorAndFocused",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    error: true,\n    focused: true,\n  },\n}"
+                },
+                {
+                    "name": "WithHint",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    hint: \"This is a hint text to help user.\",\n  },\n}"
+                },
+                {
+                    "name": "WithIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    startAdornment: \"home\",\n  },\n}"
+                },
+                {
+                    "name": "WithLabel",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: \"Email\",\n  },\n}"
                 }
             ],
             "projects/vendure-design-system/src/lib/VendureDesign.stories.ts": [
@@ -434,19 +594,6 @@
                     "kind": 183
                 }
             ],
-            "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<InputFieldComponent>",
-                    "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "projects/vendure-design-system/src/lib/button/button.stories.tsx": [
                 {
                     "name": "Story",
@@ -454,6 +601,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ButtonComponent>",
                     "file": "projects/vendure-design-system/src/lib/button/button.stories.tsx",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InputFieldComponent>",
+                    "file": "projects/vendure-design-system/src/lib/input-field/input-field.stories.tsx",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

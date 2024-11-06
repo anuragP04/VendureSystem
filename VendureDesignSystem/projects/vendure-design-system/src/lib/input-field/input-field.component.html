@@ -31,7 +31,7 @@
     matInput
     type="text"
     [defaultValue]="defaultValue"
-    [value]="value"
+    [value]="value || defaultValue"
     [placeholder]="placeholder || ''"
     [disabled]="disabled || false"
   />
