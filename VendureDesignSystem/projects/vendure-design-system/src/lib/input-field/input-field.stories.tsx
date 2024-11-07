@@ -118,3 +118,12 @@ export const WithErrorAndFocused: Story = {
     focused: true,
   },
 };
+
+// Input Field With Error & Focused
+export const WithEndAdornment: Story = {
+  args: {
+    error: true,
+    focused: true,
+    endAdornment: "info",
+  },
+};
