@@ -1,0 +1,48 @@
+@if (label){
+<div class="input-field-with-label">
+  <span>{{ label }}</span>
+  <mat-form-field [class]="getUtilityClasses()">
+    @if (startAdornment) {
+    <mat-icon matPrefix>{{ startAdornment }}</mat-icon>
+    }
+    <input
+      matInput
+      type="text"
+      [defaultValue]="defaultValue"
+      [value]="value || defaultValue"
+      [placeholder]="placeholder || ''"
+      [disabled]="disabled || false"
+    />
+    @if(hint){
+    <mat-hint>{{ hint }}</mat-hint>
+    } @if (clear) {
+    <button matSuffix mat-icon-button aria-label="Clear" (click)="value = ''">
+      <mat-icon>close</mat-icon>
+    </button>
+    }
+  </mat-form-field>
+</div>
+} @else {
+<mat-form-field [class]="getUtilityClasses()">
+  @if (startAdornment) {
+  <mat-icon matPrefix>{{ startAdornment }}</mat-icon>
+  }
+  <input
+    matInput
+    type="text"
+    [defaultValue]="defaultValue"
+    [value]="value || defaultValue"
+    [placeholder]="placeholder || ''"
+    [disabled]="disabled || false"
+  />
+  @if(hint){
+  <mat-hint>{{ hint }}</mat-hint>
+  } @if(endAdornment){
+  <mat-icon matSuffix>{{ endAdornment }}</mat-icon>
+  } @if (clear) {
+  <button matSuffix mat-icon-button aria-label="Clear" (click)="value = ''">
+    <mat-icon>close</mat-icon>
+  </button>
+  }
+</mat-form-field>
+}
