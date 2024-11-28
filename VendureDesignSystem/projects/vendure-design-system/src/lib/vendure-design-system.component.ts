@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
       vendure-design-system works!
     </p>
   `,
-  styles: ``
+  styleUrls: ["./styles.css"]
 })
 export class VendureDesignSystemComponent {
 

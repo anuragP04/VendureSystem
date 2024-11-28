@@ -1,0 +1,114 @@
+.mdc-button,
+.mdc-fab {
+  // default btn styles
+  &.btn {
+    height: 40px;
+    border-radius: 8px;
+    padding: 10px 16px;
+  }
+
+  // variant='filled' btn styles
+  &.btn-Filled {
+    box-shadow: none;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+
+    & .mdc-button__label,
+    & .mat-icon {
+      color: white;
+    }
+
+    &.mat-mdc-button-disabled {
+      background-color: #e4e2df;
+      border: 1px solid #dbd8d4;
+      & .mdc-button__label,
+      & .mat-icon {
+        color: #b1a9a2;
+      }
+    }
+  }
+
+  // variant='outlined' btn styles
+  &.btn-Outlined {
+    background-color: #ffffff;
+    border: 1px solid #e4e2df;
+    &:hover {
+      background-color: #e4e2df;
+    }
+
+    & .mdc-button__label,
+    & .mat-icon {
+      color: #4c4640;
+    }
+
+    &.btn-Outlined.mat-mdc-button-disabled {
+      background-color: #fff;
+      border: 1px solid #e4e2df;
+      & .mdc-button__label,
+      & .mat-icon {
+        color: #b1a9a2;
+      }
+    }
+  }
+  // variant='text' btn styles
+  &.btn-Text {
+    background-color: transparent;
+    color: var(--primary-color);
+    box-shadow: none;
+    &:hover {
+      box-shadow: none;
+      font-weight: 600;
+    }
+    &.mat-mdc-button-disabled {
+      background-color: transparent;
+    }
+  }
+  // size='small' btn styles
+  &.btn-SizeSmall {
+    height: 32px;
+    width: 32px;
+  }
+
+  // icon btn
+  &.mat-mdc-fab-base {
+    padding: 0;
+    &.btn-Outlined,
+    &:active {
+      box-shadow: none;
+    }
+    & .mat-icon {
+      height: 16px;
+      width: 16px;
+      font-size: 16px;
+    }
+
+    &.btn-Text {
+      height: 24px;
+      width: 24px;
+      & .mat-mdc-button-touch-target {
+        height: 24px;
+        width: 24px;
+      }
+      &:hover {
+        background-color: #e4e2df;
+      }
+    }
+    & .mat-mdc-button-persistent-ripple::before,
+    & .mat-ripple-element {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // if we have both start and end icons
+  & .btn-endIcon.mat-icon {
+    order: 1;
+    margin-left: 8px;
+    margin-right: -4px;
+  }
+
+  // background for ripple effect
+  &.mat-mdc-button .mat-mdc-button-persistent-ripple::before,
+  &.mat-mdc-button .mat-ripple-element {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}

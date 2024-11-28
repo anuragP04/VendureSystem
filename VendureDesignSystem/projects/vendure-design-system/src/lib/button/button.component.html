@@ -1,9 +1,29 @@
+@if(!iconButton){
+<!-- Button component with label -->
 <button
-  mat-raised-button
+  mat-button
   [disabled]="disabled"
   [type]="type"
-  [class]="className"
+  [class]="getUtilityClasses()"
   (click)="handleClick()"
 >
+  @if(startIcon){
+  <mat-icon [class.btn-startIcon]="startIcon">{{ startIcon }}</mat-icon>
+  } @if(label && !iconButton){
   {{ label }}
+  } @if(endIcon){
+  <mat-icon [class.btn-endIcon]="endIcon">{{ endIcon }}</mat-icon>
+  }
 </button>
+} @else{
+<!-- Button component with icon only -->
+<button
+  mat-mini-fab
+  [disabled]="disabled"
+  [type]="type"
+  [class]="getUtilityClasses()"
+  (click)="handleClick()"
+>
+  <mat-icon>{{ icon }}</mat-icon>
+</button>
+}
